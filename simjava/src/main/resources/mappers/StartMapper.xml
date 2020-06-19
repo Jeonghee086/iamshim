@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- StartMapper.xml -->
+<!-- dtd: 태그정의서 : 정의하면 태그사용가능 -->
+<!DOCTYPE mapper PUBLIC "-//mybatis//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace : java의 package -->
+<mapper namespace="com.simcom.simapp.StartMapper">
+	<!-- 멥퍼에 쿼리 넣으면 servlet-context가 찾아줌 -->
+
+	<select id="select_rdate" resultType="map" parameterType="int">
+		SELECT * FROM RDATE_VIEW WHERE HCODE=#{HCODE}
+	</select>
+
+	<!-- rsvpayment 결제 -->
+	<select id="select_rprice" resultType="int" parameterType="int">
+		SELECT RPRICE FROM RESERVATION WHERE RCODE=#{RCODE}
+	</select>
+	<update id="update_rsvend" parameterType="simcom.Reservation">
+		UPDATE RESERVATION SET
+		RCARDNUM=#{RCARDNUM}, RCARDENDM=#{RCARDENDM}, RCARDENDD=#{RCARDENDD},
+		RCARDCVV=#{RCARDCVV}, RPAYDATE=SYSDATE, PGCODE = 4	WHERE RCODE=#{RCODE}
+	</update>
+
+	<!-- 영수증 출력 -->
+	<select id="select_recipt" resultType="map" parameterType="int">
+		SELECT * FROM RECIPT_VIEW WHERE RCODE=#{RCODE}
+	</select>
+
+	<!-- rsvinsert 예약 -->
+	<insert id="insert_rsv" parameterType="simcom.Reservation">
+		INSERT INTO	RESERVATION(RCODE, PGCODE, MID, SHCODE, RCHECKIN, RCHECKOUT,
+		RPPLNUM, RMBIRTH, RMPHONE, MGCODE, RES, RPRICE)
+		VALUES (SEQ_RESV.NEXTVAL, 1, #{MID}, #{SHCODE}, #{RCHECKIN}, #{RCHECKOUT},
+		#{RPPLNUM}, #{RMBIRTH}, #{RMPHONE}, #{MGCODE}, #{RES}, #{RPRICE})
+	</insert>
+
+	<!-- 이름누르면 회원정보 및 숙소정보 수정 -->
+	<select id="modi_ho" resultType="map" parameterType="string">
+		SELECT * FROM H_OWNER WHERE HOID=#{HOID} AND HOBIRTH IS NOT NULL
+	</select>
+	<update id="mo_ho" parameterType="simcom.H_owner">
+		UPDATE H_OWNER SET	HOBIRTH=#{HOBIRTH}, HOPHONE=#{HOPHONE},
+		HOGCODE=#{HOGCODE}, BCODE=#{BCODE}, HOACNUM=#{HOACNUM} WHERE HOID=#{HOID}
+	</update>
+	<select id="modi_h" resultType="map" parameterType="string">
+		SELECT * FROM MODIH_VIEW WHERE HOID=#{HOID} AND SHEND IS NULL
+	</select>
+	<update id="update_h" parameterType="simcom.House">
+		UPDATE SHARE_HOUSE SET SHEND=SYSDATE WHERE HCODE=#{HCODE}
+	</update>
+	<!-- 수정하기 누르면 숙소수정 -->
+	<select id="modi_hdetail" resultType="map" parameterType="int">
+		SELECT HCODE, CNAME, TNAME, RNAME, CITYNAME, ANAME, 
+		HADETAIL, HAZIPCODE, HNAME, HPPLNUM, HPRICE, HBEDRMNUM,	
+		HBEDNUM, HBATHRMNUM, HBSCODE, HMANUAL, HOWNCODE,
+		LISTAGG(CVNAME, ' · ') WITHIN GROUP (ORDER BY CVNAME) AS CVNAME
+		FROM MOH_VIEW WHERE HCODE = #{HCODE} group by HCODE, CNAME, 
+		TNAME, RNAME, CITYNAME, ANAME, HADETAIL, HAZIPCODE, HNAME, 
+		HPPLNUM, HPRICE, HBEDRMNUM,	HBEDNUM, HBATHRMNUM, HBSCODE, HMANUAL,HOWNCODE
+	</select>
+	<update id="mo_h" parameterType="simcom.House" >
+		UPDATE HOUSE SET 
+		HOWNCODE = #{HOWNCODE}, HNAME=#{HNAME}, HPPLNUM = #{HPPLNUM}, 
+		HPRICE = #{HPRICE}, HBEDRMNUM =	#{HBEDRMNUM}, HBEDNUM = #{HBEDNUM}, 
+		HBATHRMNUM = #{HBATHRMNUM},	HBSCODE = #{HBSCODE}, HMANUAL = #{HMANUAL}
+		WHERE HCODE = #{HCODE}
+	</update>
+
+	
+	
+	
+	<!-- mymem 예약확인 -->
+	<select id="select_hview" resultType="map"	parameterType="string">
+		SELECT * FROM MYMEM_VIEW WHERE HOID=#{HOID}
+	</select>
+	<select id="select_gview" resultType="map"	parameterType="string">
+		SELECT * FROM MYMEM_VIEW WHERE MID=#{MID}
+	</select>
+	<!-- myadmin 계약완료 숙소 및 숙박완료 수수료 확인 -->
+	<select id="add_hview" resultType="map" parameterType="string">
+		SELECT * FROM SH_VIEW where SHEND IS NOT NULL
+	</select>
+	<select id="addend_hview" resultType="map"	parameterType="string">
+		SELECT * FROM MYMEM_VIEW WHERE PGNAME='숙박완료'
+	</select>
+
+
+	<!-- mymem 호스트의 예약요청 수락 or 거절 -->
+	<update id="update_rsv" parameterType="simcom.Reservation">
+		UPDATE RESERVATION SET	PGCODE = #{PGCODE} WHERE RCODE=#{RCODE}
+	</update>
+	<delete id="delete_rsv" parameterType="simcom.Reservation">
+		DELETE FROM RESERVATION	RSV WHERE RSV.RCODE = #{RCODE}
+	</delete>
+
+	<!-- hselect -->
+	<select id="h_select" resultType="map">
+		SELECT HCODE, TNAME, RNAME, HNAME, HPPLNUM,HBEDRMNUM,HBEDNUM,
+		HBATHRMNUM,CITYNAME, ANAME, HPRICE, HPICNAME, SHEND,
+		LISTAGG(CVNAME, ' · ') WITHIN GROUP (ORDER BY CVNAME) AS CVNAME
+		FROM H_VIEW WHERE CITYNAME LIKE '%'||#{CITYNAME}||'%'
+		AND HPPLNUM >= #{HPPLNUM} AND HOID != #{HOID} AND SHEND is null
+		group by HCODE, TNAME, RNAME, HNAME, SHEND,
+		HPPLNUM, HBEDRMNUM, HBEDNUM, HBATHRMNUM, CITYNAME,
+		ANAME, HPRICE , HPICNAME ORDER BY HCODE DESC
+	</select>
+
+	<!-- hselectdetail -->
+	<select id="hdetail_select" resultType="map" parameterType="int">
+		SELECT HCODE, HOID, HONAME, HOEMAIL, CNAME,TNAME,RNAME,
+		CITYNAME,ANAME, HADETAIL, HAZIPCODE,
+		HNAME, HPPLNUM, HPRICE, HBEDRMNUM,	HBEDNUM, HBATHRMNUM,
+		HBSNAME, HMANUAL, HPICNAME, SHCODE, 
+		LISTAGG(CVNAME, ' · ') WITHIN GROUP (ORDER BY CVNAME) AS CVNAME
+		FROM H_HO_VIEW WHERE HCODE = #{HCODE} group by HCODE, TNAME, HOID,
+		RNAME, HONAME, HNAME, HOEMAIL, HPPLNUM, CNAME, HBEDRMNUM,
+		HBEDNUM, HBATHRMNUM, CITYNAME, ANAME, HADETAIL,
+		HPRICE, HAZIPCODE, HPICNAME, HBSNAME, HMANUAL, SHCODE, HPICNAME
+	</select>
+
+	<!-- hinsert1 소유자 추가정보 -->
+	<select id="h_b" resultType="map">
+		SELECT * FROM BANK
+	</select>
+	<update id="update_howner" parameterType="simcom.H_owner">
+		UPDATE H_OWNER SET
+		HOBIRTH=#{HOBIRTH}, HOPHONE=#{HOPHONE}, HOGCODE=#{HOGCODE},
+		BCODE=#{BCODE}, HOACNUM=#{HOACNUM} WHERE HOID=#{HOID}
+	</update>
+	<!-- 범주선택에 따른 유형 조회 id : 쿼리구분 resultType="map" : DB의 데이터를 할당받는 타입 설정 (select했을 
+		때 반환값의 데이터타입) -->
+	<select id="h_c" resultType="map">
+		SELECT * FROM CATEGORY
+	</select>
+	<select id="h_city" resultType="map">
+		SELECT * FROM CITY
+	</select>
+	<select id="h_r" resultType="map">
+		SELECT * FROM RANGE
+	</select>
+
+	<!-- hinsert2 숙소1/2 -->
+	<insert id="insert_house" parameterType="simcom.House">
+		INSERT INTO HOUSE(HCODE, HREGDATE, HOID, TCODE, RCODE, 
+		ACODE, HOWNCODE, HADETAIL,	HAZIPCODE)
+		VALUES (SEQ_H.NEXTVAL, SYSDATE, #{HOID}, #{TCODE}, 
+		#{RCODE}, #{ACODE}, #{HOWNCODE}, #{HADETAIL}, #{HAZIPCODE})
+	</insert>
+	<select id="h" resultType="int" parameterType="string">
+		SELECT HCODE FROM HOUSE WHERE HADETAIL = #{HADETAIL}
+	</select>
+	
+	<select id="select_hadetail" resultType="string" parameterType="string"> 
+		SELECT COUNT(*) FROM HOUSE WHERE HADETAIL = #{HADETAIL} 
+	</select> 
+	
+	<select id="count_hcode" resultType="int" parameterType="string">
+		SELECT FROM HOUSE WHERE HADETAIL = #{HADETAIL}
+	</select>
+	<!-- hinsert3 숙소2/2 -->
+	<update id="update_house" parameterType="simcom.House">
+		UPDATE HOUSE SET
+		HNAME=#{HNAME}, HPPLNUM = #{HPPLNUM}, HPRICE = #{HPRICE},
+		HBEDRMNUM =	#{HBEDRMNUM}, HBEDNUM = #{HBEDNUM}, HBATHRMNUM = #{HBATHRMNUM},
+		HBSCODE = #{HBSCODE}, HMANUAL = #{HMANUAL}, HPICNAME = #{fileName}
+		WHERE HCODE = ${HCODE}
+	</update>
+	<insert id="insert_sharehouse"	parameterType="simcom.Share_house">
+		INSERT INTO SHARE_HOUSE(SHCODE, HCODE, SHSTART)
+		VALUES	(SEQ_SH.NEXTVAL, ${HCODE}, SYSDATE)
+	</insert>
+	<insert id="insert_conven" parameterType="simcom.Conven">
+		INSERT INTO CONVEN(CVCODE, HCODE, CVNAME)
+		SELECT SEQ_CV.NEXTVAL,
+		${HCODE}, A.* FROM (
+		<foreach item='item' collection='CVNAME' 
+				separator="UNION ALL" index="index">
+			SELECT #{item,jdbcType=VARCHAR} FROM DUAL
+		</foreach>
+		) A
+	</insert>
+
+</mapper>

@@ -1,0 +1,170 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.parallax {
+    background-image: url("../imgs/dd.jpeg");
+    background-size: 100% 100%;
+    min-height: 800px; 
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }  
+
+nav {
+    float: right;
+    padding: 10px 10px;
+}
+
+/* 메뉴와 숙소조회 */
+.menu ul{
+    list-style-type: none;
+    
+    
+}
+.menu li {
+    margin: 20px;
+    float: left;
+    
+}
+
+.menu ul a{
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    
+}
+
+.sch {
+    width: 80%;
+    display: block;
+    padding: 20px 30px;
+    background-color: rgba(255, 255, 255, 0.836);
+    position: relative;
+    top: 250px;
+    left: 140px;
+    border-radius: 10px;
+}
+
+.sch_ttl {
+    padding: 10px 10px;
+    font-size: 30px;
+    font-weight: 800;
+    color:rgb(75, 74, 74);
+}
+
+
+.inp {
+    width: 30%;
+    float: left;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.sch_input {
+    height: 45px;
+    width: 100%;
+    padding: 10px 10px;
+    color: rgb(100, 98, 98);
+    font-size: 15px;
+    border: 1px solid rgb(230, 227, 227);
+}
+.sch_input2 {
+    height: 45px;
+    width: 50%;
+    color: rgb(100, 98, 98);
+    font-size: 15px;
+    border: 1px solid rgb(230, 227, 227);
+    float: left;
+}
+
+.sch_button {
+    display: grid;
+    justify-content: end;
+    padding: 20px 0;
+}
+
+.sch_button button{
+    background-color: rgba(100, 98, 98, 0.836);
+    color:white;
+    width: 65px;
+    height: 43px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 0;
+    cursor: pointer;
+}
+
+.sec_ttl {
+    font-size: 25px;
+    font-weight: 800;
+    color:rgb(68, 66, 66);
+    margin-bottom: 20px;
+}
+
+
+
+.ad2 {
+    margin: 20px 0;
+    background-image: url("../imgs/sug.jpg");
+    height: 400px;
+    background-size: 100% 100%;
+    border-radius: 10px;
+}
+
+.choo__box {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.home__box {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 15px;
+    
+}
+
+/* 숙소 설명 */
+.info1 {
+    margin: 5px 0;
+    font-size: 14px;
+    color:gray;
+}
+
+.info2 {
+    font-size: 18px;
+    font-weight: 600;
+    color:rgb(61, 60, 60); 
+}
+
+.star {
+    font-size: 12px;
+    color:rgb(30, 119, 115);
+    font-weight: 800;
+}
+
+.count, .type {
+    font-size: 12px;
+}
+
+/*main*/
+html, body {
+    background-color: #fff;
+}
+
+body {
+    margin-bottom: 250px;
+}
+
+main{
+    padding: 60px;
+    width: 90%;
+    margin: auto;
+}

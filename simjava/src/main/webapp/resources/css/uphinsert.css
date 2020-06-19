@@ -1,0 +1,137 @@
+* {	box-sizing: border-box;
+	font-size: 15px;
+	margin: 0;
+	padding: 0;
+}
+
+.na {	
+    background-color: rgba(222, 184, 135, 0.253);
+    padding: 20px 20px;
+	font-size: 18px;
+	font-weight: bolder;
+}
+
+nav a:hover {
+    border-bottom: 2px solid black;
+    padding-bottom: 20px;   
+}
+
+/* 컨텐츠 */
+#mn li {
+	overflow: hidden;
+	border: dotted gray thin;
+	margin: 15px;
+	padding: 2px;
+}
+
+/* 링크 */
+#mn li a {
+	float: left;
+	display: block;
+	color: black;
+	text-align: center;
+	font-weight: bolder;
+	text-decoration: none;
+	padding: 8px 15px;
+}
+
+
+/* 반응형 */
+@media only screen and (max-width: 600px) {
+	#menu, #menu2 {
+		width: 100%;
+	}
+}
+
+
+section {
+	float: left;
+	padding: 20px;
+}
+main section:first-child {
+	width: 25%;
+}
+main section:nth-child(2) {
+    width: 75%;
+	border-left: dotted black thin;
+}
+
+
+/*숙소정보 입력란 css*/
+input, select, textarea {
+	width: 70%;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	resize: vertical;
+}
+
+label {
+	padding: 12px 12px 12px 0;
+	display: inline-block;
+	float: right;
+}
+
+label {
+	font-weight: bolder;
+}
+
+button {
+	background-color: burlywood;
+	padding: 10px 10px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	
+}
+
+button[type=submit]:hover {
+	background-color: rgba(165, 42, 42, 0.705);
+}
+
+
+#fb {
+	background-color: rgba(222, 184, 135, 0.253);
+	padding: 7px 10px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	float: left;
+}
+
+#fb[type=submit]:hover {
+	background-color: burlywood;
+}
+
+
+.se {
+	float: left;
+	width: 15%;
+	margin-top: 6px;
+}
+
+.sel {
+	float: left;
+	width: 35%;
+	margin-top: 6px;
+}
+
+
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+/* nav 위 편집*/
+.parallax {
+    background-image: url("../img/dd.jpeg");
+    background-size: 100% 100%;
+    min-height: 250px; 
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  

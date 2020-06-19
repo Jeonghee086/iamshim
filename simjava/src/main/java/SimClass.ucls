@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.4" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="simcom.Conven" project="simjava" file="/simjava/src/main/java/simcom/Conven.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="173" width="206" x="1388" y="351"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="simcom.Reservation" project="simjava" 
+    file="/simjava/src/main/java/simcom/Reservation.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="523" width="231" x="1149" y="4"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="simcom.HLoginManager" project="simjava" 
+    file="/simjava/src/main/java/simcom/HLoginManager.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="138" width="229" x="1604" y="7"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="simcom.Share_house" project="simjava" 
+    file="/simjava/src/main/java/simcom/Share_house.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="340" width="208" x="1387" y="5"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="simcom.House" project="simjava" file="/simjava/src/main/java/simcom/House.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="522" width="243" x="900" y="4"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="simcom.Member" project="simjava" file="/simjava/src/main/java/simcom/Member.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="339" width="235" x="1603" y="189"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="simcom.H_owner" project="simjava" 
+    file="/simjava/src/main/java/simcom/H_owner.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="521" width="218" x="673" y="2"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="com.simcom.simapp.HomeController" project="simjava" 
+    file="/simjava/src/main/java/com/simcom/simapp/HomeController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="749" width="318" x="49" y="-202"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="simcom.Cdb" project="simjava" file="/simjava/src/main/java/simcom/Cdb.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="308" width="243" x="376" y="-200"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="simcom.숙소소유자" project="simjava" file="/simjava/src/main/java/simcom/숙소소유자.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="91" width="105" x="825" y="-108"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="simcom.숙소" project="simjava" file="/simjava/src/main/java/simcom/숙소.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="91" width="98" x="941" y="-106"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="simcom.예약" project="simjava" file="/simjava/src/main/java/simcom/예약.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="91" width="98" x="1049" y="-105"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="simcom.숙소공유" project="simjava" file="/simjava/src/main/java/simcom/숙소공유.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="91" width="98" x="1156" y="-105"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="simcom.편의시설" project="simjava" file="/simjava/src/main/java/simcom/편의시설.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="91" width="98" x="1262" y="-105"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" name="simcom.회원" project="simjava" file="/simjava/src/main/java/simcom/회원.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="91" width="98" x="1370" y="-105"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="16">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="17" name="login">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="18" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

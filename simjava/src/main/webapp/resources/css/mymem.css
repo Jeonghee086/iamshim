@@ -1,0 +1,94 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/* nav위 편집*/
+.parallax {
+	background-image: url("../img/dd.jpeg");
+	background-size: 100% 100%;
+	min-height: 250px;
+	/* Create the parallax scrolling effect */
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+/* Style the tab */
+.na {
+	overflow: hidden;
+	padding: 20px 20px;
+	background-color: rgba(222, 184, 135, 0.253);
+}
+
+/* Style the buttons inside the tab */
+.na button {
+	background-color: transparent;
+	float: left;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	font-weight: bolder;
+	padding-right: 30px;
+	font-size: 18px;
+}
+
+/* Change background color of buttons on hover */
+.na button:hover {
+	color: brown;
+}
+
+.na button.active {
+	color: brown;
+}
+
+/* Style the tab content */
+.tabcontent {
+	display: none;
+	border-top: none;
+	padding-top: 60px;
+	padding-left: 120px;
+	padding-right: 120px;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+th, td {
+	text-align: center;
+	padding: 5px;
+}
+
+tr:nth-child(even) {
+	background-color: rgba(165, 42, 42, 0.062);
+}
+
+th {
+	background-color: rgba(165, 42, 42, 0.452);
+}
+
+.naNum a {
+	text-decoration: none;
+	color: black;
+}
+
+/* 반응형 */
+@media only screen and (max-width: 600px) {
+	#menu, #menu2 {
+		width: 100%;
+	}
+	button {
+		background-color: burlywood;
+		padding: 10px 10px;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+	}
+	button[type=submit]:hover {
+		background-color: rgba(165, 42, 42, 0.705);
+	}
+}
