@@ -43,7 +43,7 @@ nav {
 				<ul>
 					<li><a href="/simapp/">HOME</a></li>
 					<li><a href="/simapp/login">로그인</a></li>
-					<li><a href="/simapp/mymem2">회원가입</a></li>
+					<li><a href="/simapp/mymem2?HCODE=1">회원가입</a></li>
 				</ul>
 			</div>
 		</nav>

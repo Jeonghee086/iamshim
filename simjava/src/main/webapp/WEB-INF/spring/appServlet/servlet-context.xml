@@ -60,8 +60,7 @@
 	mappers : 만든폴더 
 	/**/ : 있어도 되고 없어도 되고 
 	*Mapper.xml -> 끝은 Mapper.xml이어야 한다 -->
-	<beans:bean id="sqlSessionFactory"
-		class="org.mybatis.spring.SqlSessionFactoryBean">
+	<beans:bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<beans:property name="dataSource" ref="dataSource">
 		</beans:property>
 		<beans:property name="mapperLocations" 
